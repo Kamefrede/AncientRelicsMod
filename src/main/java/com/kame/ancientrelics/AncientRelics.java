@@ -146,66 +146,84 @@ public class AncientRelics {
                MinecraftForge.setBlockHarvestLevel(RelicOre, "pickaxe", 3);
                MinecraftForge.setBlockHarvestLevel(randomStone, "pickaxe", 2);
                
+               ItemStack activatedRelicStack = new ItemStack(ActivatedRelicOrb);
+               ItemStack goldStack = new ItemStack(Item.ingotGold, 1);
                ItemStack diamondStack = new ItemStack(Item.diamond, 1);
                ItemStack stoneStack = new ItemStack(1, 32, 0);
                ItemStack ironStack = new ItemStack(Item.ingotIron);
                ItemStack coalStack = new ItemStack(Item.coal);
-               ItemStack derpyniumStack = new ItemStack(InertRelicOrb);
-               ItemStack derpyblockStack = new ItemStack(RelicBlock);
+               ItemStack InertRelicStack = new ItemStack(InertRelicOrb);
+               ItemStack relicBlockStack = new ItemStack(RelicBlock);
                ItemStack hardstoneStack = new ItemStack(randomStone);
                ItemStack cobbleStack = new ItemStack(Block.cobblestone);
                ItemStack dimablockStack = new ItemStack(Block.blockDiamond);
                ItemStack milkStack = new ItemStack(Item.bucketMilk);
                ItemStack stickStack = new ItemStack(Item.stick);
-               ItemStack derpyshovelStack = new ItemStack(RelicShovel);
-               ItemStack derpyswordStack = new ItemStack(RelicSword);
-               ItemStack derpyaxeStack = new ItemStack(RelicAxe);
-               ItemStack derpyhoeStack = new ItemStack(RelicHoe);
-               ItemStack derpypickStack = new ItemStack(RelicPickaxe);
-               ItemStack derpywand = new ItemStack(kame_wand);
+               ItemStack relichovelStack = new ItemStack(RelicShovel);
+               ItemStack relicswordStack = new ItemStack(RelicSword);
+               ItemStack relicaxeStack = new ItemStack(RelicAxe);
+               ItemStack relichoeStack = new ItemStack(RelicHoe);
+               ItemStack relicpickStack = new ItemStack(RelicPickaxe);
+               ItemStack relicwand = new ItemStack(kame_wand);
                ItemStack smeltedIronStack = new ItemStack(smeltedIron);
-               ItemStack derpylegsStack = new ItemStack(RelicLeggings);
-               ItemStack derpyHatStack = new ItemStack(RelicHelmet);
-               ItemStack derpybootsStack = new ItemStack(RelicBoots);
-               ItemStack derpychestStack = new ItemStack(RelicChestplate);
+               ItemStack reliclegsStack = new ItemStack(RelicLeggings);
+               ItemStack relicHatStack = new ItemStack(RelicHelmet);
+               ItemStack relicbootsStack = new ItemStack(RelicBoots);
+               ItemStack relicchestStack = new ItemStack(RelicChestplate);
+               ItemStack shovelStack = new ItemStack(Item.shovelIron);
+               ItemStack swordStack = new ItemStack(Item.swordIron);
+               ItemStack axeStack = new ItemStack(Item.axeIron);
+               ItemStack pickaxeStack = new ItemStack(Item.pickaxeIron);
+               ItemStack hoeStack = new ItemStack(Item.hoeIron);
+               ItemStack wandcoreStack = new ItemStack(RelicWandCore);
+               ItemStack relicFuelStack = new ItemStack(RelicFuelOrb);
+               ItemStack coalBlockStack = new ItemStack(Block.coalBlock);
+               ItemStack enderpearlStack = new ItemStack(Item.enderPearl);
                              
-          
+               GameRegistry.addRecipe(wandcoreStack, "xyx", "xox", "xyx",
+            		   'x', goldStack, 'y', stickStack, 'o', enderpearlStack);
                
-               GameRegistry.addRecipe(derpyblockStack, "xxx", "xxx", "xxx",
-                       'x', InertRelicOrb);
+               GameRegistry.addRecipe(relicFuelStack, " x ", "xyx", "x",
+            		   'x', coalBlockStack, 'y', activatedRelicStack);
+               
+               GameRegistry.addRecipe(activatedRelicStack, " y ", "yxy", " y ",
+            		  'y', coalStack, 'x', InertRelicStack);
+               
+               GameRegistry.addRecipe(relicBlockStack, "xyx", "yxy", "yxy",
+                       'y', InertRelicOrb, 'x', hardstoneStack);
                
                GameRegistry.addRecipe(hardstoneStack, "xxx", "xxx", "xxx",
             		   'x', cobbleStack);
        
-               GameRegistry.addRecipe(derpyshovelStack, " x ", " y ", " y ",
-            		   'x', derpyniumStack, 'y', stickStack);
+               GameRegistry.addRecipe(relichovelStack, " x ", " y ", "   ",
+            		   'x', activatedRelicStack, 'y', shovelStack);
                
-               GameRegistry.addRecipe(derpyswordStack, " x ", " x ", " y ",
-            		 'x', derpyniumStack, 'y', stickStack  );
+               GameRegistry.addRecipe(relicswordStack, " x ", " x ", "   ",
+            		 'x', activatedRelicStack, 'y', swordStack  );
                
-               GameRegistry.addRecipe(derpyaxeStack, "xx ", "xy ", " y ",
-            		   'x', derpyniumStack, 'y', stickStack);
+               GameRegistry.addRecipe(relicaxeStack, " x ", " y ", "   ",
+            		   'x', activatedRelicStack, 'y', axeStack);
                
-               GameRegistry.addRecipe(derpypickStack, "xxx", " y ", " y ",
-            		   'x', derpyniumStack, 'y', stickStack);
+               GameRegistry.addRecipe(relicpickStack, " x ", " y ", "   ",
+            		   'x', activatedRelicStack, 'y', pickaxeStack);
                
-               GameRegistry.addRecipe(derpyhoeStack, "xx ", " y ", " y ",
-            		   'x', derpyniumStack, 'y', stickStack);
+               GameRegistry.addRecipe(relichoeStack, " x ", " y ", "   ",
+            		   'x', activatedRelicStack, 'y', hoeStack);
                
-               GameRegistry.addRecipe(derpywand, "xyx", "yoy", "xyx",
-            		   'x', derpyblockStack, 'y', dimablockStack, 'o', derpyniumStack);
+               GameRegistry.addRecipe(relicwand, "x", " y ", "   ",
+            		   'x', activatedRelicStack, 'y', wandcoreStack);
                
-               GameRegistry.addRecipe(derpyHatStack, "xxx", "x x",
-            		   'x', derpyniumStack);
+               GameRegistry.addRecipe(relicHatStack, "xxx", "x x",
+            		   'x', InertRelicStack);
                
-               GameRegistry.addRecipe(derpybootsStack, "x x", "x x",
-            		   'x', derpyniumStack);
+               GameRegistry.addRecipe(relicbootsStack, "x x", "x x",
+            		   'x', InertRelicStack);
                
-               GameRegistry.addRecipe(derpychestStack, "x x", "xxx", "xxx",
-            		   'x', derpyniumStack);
+               GameRegistry.addRecipe(relicchestStack, "x x", "xxx", "xxx",
+            		   'x', InertRelicStack);
                
-               GameRegistry.addRecipe(derpylegsStack, "xxx", "x x", "x x",
-            		   'x', derpyniumStack);
+               GameRegistry.addRecipe(reliclegsStack, "xxx", "x x", "x x",
+            		   'x', InertRelicStack);
                
               
                
