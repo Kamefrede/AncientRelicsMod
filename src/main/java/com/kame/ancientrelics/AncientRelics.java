@@ -66,7 +66,7 @@ public class AncientRelics {
 	
 	public final static Item RelicFuelOrb = new RelicItem(5097).setCreativeTab(kame_random).setUnlocalizedName("RelicFuelOrb");
 	
-	public final static Item RelicWandCore = new RelicItem(5000).setCreativeTab(kame_random).setUnlocalizedName("RelicWandCore")
+	public final static Item RelicWandCore = new RelicItem(5000).setCreativeTab(kame_random).setUnlocalizedName("RelicWandCore");
        // The instance of your mod that Forge uses.
        @Instance("AncientRelics")
        public static AncientRelics instance;
@@ -88,19 +88,28 @@ public class AncientRelics {
        @EventHandler
        public void load(FMLInitializationEvent event) {
     	   proxy.registerRenderers();
+    	   
+    	       GameRegistry.registerItem(RelicWandCore, "RelicWandCore");
+    	       LanguageRegistry.addName(RelicWandCore, "Inert Wand Core");
+    	   
+    	       GameRegistry.registerItem(RelicFuelOrb, "RelicFuelOrb");
+    	       LanguageRegistry.addName(RelicFuelOrb, "Relic Infused Coal");
                                           
+    	       GameRegistry.registerItem(ActivatedRelicOrb, "ActivatedRelicOrb");
+    	       LanguageRegistry.addName(ActivatedRelicOrb, "Activated Relic Orb");
+    	   
                GameRegistry.registerBlock(randomStone, "HardStone");
                LanguageRegistry.addName(randomStone, "Hardened Stone");
                
-               GameRegistry.registerBlock(RelicOre, "DerpyniumOre");
-               LanguageRegistry.addName(RelicOre, "Derpynium Ore");
+               GameRegistry.registerBlock(RelicOre, "RelicOre");
+               LanguageRegistry.addName(RelicOre, "Relic Infused Ore");
                
-               GameRegistry.registerBlock(RelicBlock, "DerpyniumBlock");
-               LanguageRegistry.addName(RelicBlock, "Derpynium Block");
+               GameRegistry.registerBlock(RelicBlock, "RelicBlock");
+               LanguageRegistry.addName(RelicBlock, "Relic Infused Block");
                
                
                GameRegistry.registerItem(InertRelicOrb, "InertRelicOrb");
-               LanguageRegistry.addName(InertRelicOrb, "Derpynium Ingot");
+               LanguageRegistry.addName(InertRelicOrb, "Inert Relic Orb");
                
                GameRegistry.registerItem(RelicAxe, "RelicAxe");
                LanguageRegistry.addName(RelicAxe, "Relic infused Axe");
@@ -115,7 +124,7 @@ public class AncientRelics {
                LanguageRegistry.addName(RelicSword, "Relic infused Shovel");
                
                GameRegistry.registerItem(kame_wand, "kame_wand");
-               LanguageRegistry.addName(kame_wand, "Magical Relic Wand");
+               LanguageRegistry.addName(kame_wand, "Relic Infused Wand");
                
                GameRegistry.registerItem(RelicHelmet, "RelicHelmet");
                LanguageRegistry.addName(RelicHelmet, "Relic infused Helmet");
