@@ -42,8 +42,6 @@ public class AncientRelics {
 		
 	public final static Block randomStone = new RelicBlock(500, Material.rock).setHardness(3.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("HardStone").setCreativeTab(kame_random).setHardness(50.0F).setTextureName("random:RandomStone");
 	
-	public final static Block smeltedIron = new RelicBlock(600, Material.iron).setHardness(3.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("smeltedIron").setCreativeTab(kame_random).setHardness(50.0F).setTextureName("random:smeltedIron");
-
 	public static Item RelicPickaxe = (new ItemPickaxe(5012, RelicT)).setUnlocalizedName("RelicPickaxe").setTextureName("random:derpyniumPickaxe").setCreativeTab(kame_random);
 	
 	public static Item RelicAxe = (new ItemAxe(5013, RelicT)).setUnlocalizedName("RelicAxe").setTextureName("random:derpyniumAxe").setCreativeTab(kame_random);
@@ -89,6 +87,8 @@ public class AncientRelics {
        public void load(FMLInitializationEvent event) {
     	   proxy.registerRenderers();
     	   
+    	       
+    	   
     	       GameRegistry.registerItem(RelicWandCore, "RelicWandCore");
     	       LanguageRegistry.addName(RelicWandCore, "Inert Wand Core");
     	   
@@ -120,7 +120,7 @@ public class AncientRelics {
                GameRegistry.registerItem(RelicHoe, "RelicHoe");
                LanguageRegistry.addName(RelicHoe, "Relic infused Hoe");
                
-               GameRegistry.registerItem(RelicSword, "Relic");
+               GameRegistry.registerItem(RelicSword, "RelicSword");
                LanguageRegistry.addName(RelicSword, "Relic infused Shovel");
                
                GameRegistry.registerItem(kame_wand, "kame_wand");
@@ -138,9 +138,11 @@ public class AncientRelics {
                GameRegistry.registerItem(RelicBoots, "RelicBoots");
                LanguageRegistry.addName(RelicBoots, "Relic infused Boots");
                
-               GameRegistry.registerBlock(smeltedIron, "smeltedIron");
-               LanguageRegistry.addName(smeltedIron, "Smelted Iron block");
+               GameRegistry.registerItem(RelicPickaxe, "RelickPickaxe");
+               LanguageRegistry.addName(RelicPickaxe, "Relic Infused Pickaxe");
                
+               GameRegistry.registerFuelHandler(new RelicFuelHandler());
+                  
                LanguageRegistry.instance().addStringLocalization("itemGroup.kame_random", "en_US", "Ancient Relics");
                
                MinecraftForge.setBlockHarvestLevel(RelicOre, "pickaxe", 3);
@@ -165,7 +167,6 @@ public class AncientRelics {
                ItemStack relichoeStack = new ItemStack(RelicHoe);
                ItemStack relicpickStack = new ItemStack(RelicPickaxe);
                ItemStack relicwand = new ItemStack(kame_wand);
-               ItemStack smeltedIronStack = new ItemStack(smeltedIron);
                ItemStack reliclegsStack = new ItemStack(RelicLeggings);
                ItemStack relicHatStack = new ItemStack(RelicHelmet);
                ItemStack relicbootsStack = new ItemStack(RelicBoots);
