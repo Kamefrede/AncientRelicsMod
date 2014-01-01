@@ -179,6 +179,10 @@ public class AncientRelics {
                ItemStack relicFuelStack = new ItemStack(RelicFuelOrb);
                ItemStack coalBlockStack = new ItemStack(Block.coalBlock);
                ItemStack enderpearlStack = new ItemStack(Item.enderPearl);
+               ItemStack ironhStack = new ItemStack(Item.helmetIron);
+               ItemStack ironcStack = new ItemStack(Item.plateIron);
+               ItemStack ironlStack = new ItemStack(Item.legsIron);
+               ItemStack ironbStack = new ItemStack(Item.bootsIron);
                              
                GameRegistry.addRecipe(wandcoreStack, "xyx", "xox", "xyx",
             		   'x', goldStack, 'y', stickStack, 'o', enderpearlStack);
@@ -195,35 +199,35 @@ public class AncientRelics {
                GameRegistry.addRecipe(hardstoneStack, "xxx", "xxx", "xxx",
             		   'x', cobbleStack);
        
-               GameRegistry.addRecipe(relichovelStack, " x ", " y ", "   ",
+               GameRegistry.addRecipe(relichovelStack, " x ", " y ",
             		   'x', activatedRelicStack, 'y', shovelStack);
                
-               GameRegistry.addRecipe(relicswordStack, " x ", " x ", "   ",
+               GameRegistry.addRecipe(relicswordStack, " x ", " x ",
             		 'x', activatedRelicStack, 'y', swordStack  );
                
-               GameRegistry.addRecipe(relicaxeStack, " x ", " y ", "   ",
+               GameRegistry.addRecipe(relicaxeStack, " x ", " y ",
             		   'x', activatedRelicStack, 'y', axeStack);
                
-               GameRegistry.addRecipe(relicpickStack, " x ", " y ", "   ",
+               GameRegistry.addRecipe(relicpickStack, " x ", " y ",
             		   'x', activatedRelicStack, 'y', pickaxeStack);
                
-               GameRegistry.addRecipe(relichoeStack, " x ", " y ", "   ",
+               GameRegistry.addRecipe(relichoeStack, " x ", " y ",
             		   'x', activatedRelicStack, 'y', hoeStack);
                
-               GameRegistry.addRecipe(relicwand, "x", " y ", "   ",
+               GameRegistry.addRecipe(relicwand, " x ", " y ", "   ",
             		   'x', activatedRelicStack, 'y', wandcoreStack);
                
-               GameRegistry.addRecipe(relicHatStack, "xxx", "x x",
-            		   'x', InertRelicStack);
+               GameRegistry.addRecipe(relicHatStack, " x ", " y ",
+            		   'x', activatedRelicStack, 'y', ironhStack);
                
-               GameRegistry.addRecipe(relicbootsStack, "x x", "x x",
-            		   'x', InertRelicStack);
+               GameRegistry.addRecipe(relicbootsStack, " x ", " y ",
+            		   'x', activatedRelicStack, 'y', ironbStack);
                
-               GameRegistry.addRecipe(relicchestStack, "x x", "xxx", "xxx",
-            		   'x', InertRelicStack);
+               GameRegistry.addRecipe(relicchestStack, " x ", " y ",
+            		   'x', activatedRelicStack, 'y', ironcStack);
                
-               GameRegistry.addRecipe(reliclegsStack, "xxx", "x x", "x x",
-            		   'x', InertRelicStack);
+               GameRegistry.addRecipe(reliclegsStack, " x ", " y ",
+            		   'x', activatedRelicStack, 'y', ironlStack);
                
               
                
