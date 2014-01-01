@@ -66,6 +66,7 @@ public class AncientRelics {
 	
 	public final static Item RelicFuelOrb = new RelicItem(5097).setCreativeTab(kame_random).setUnlocalizedName("RelicFuelOrb");
 	
+	public final static Item RelicWandCore = new RelicItem(5000).setCreativeTab(kame_random).setUnlocalizedName("RelicWandCore")
        // The instance of your mod that Forge uses.
        @Instance("AncientRelics")
        public static AncientRelics instance;
