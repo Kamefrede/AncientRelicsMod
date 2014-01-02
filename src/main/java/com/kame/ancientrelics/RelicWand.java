@@ -27,7 +27,7 @@ public class RelicWand extends Item {
 				par2World.spawnEntityInWorld(new EntityEnderPearl(par2World,
 						par3EntityPlayer));
 				par3EntityPlayer.addPotionEffect(new PotionEffect(
-						Potion.regeneration.id, 255, 255));
+						Potion.regeneration.id, 60, 10));
 			}
 
 			return par1ItemStack;

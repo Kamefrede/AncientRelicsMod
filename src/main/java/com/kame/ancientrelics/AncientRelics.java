@@ -29,6 +29,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class AncientRelics {
 	
+	
 	public static CreativeTabs kame_random = new RelicTab(CreativeTabs.getNextID(), "Ancient Relics");
 
     public static Item RelicHelmet;
@@ -60,11 +61,11 @@ public class AncientRelics {
 	
 	public final static Item kame_wand = new RelicWand(5020).setTextureName("random:derpyniumWand").setCreativeTab(kame_random);
 
-	public final static Item ActivatedRelicOrb = new RelicItem(5096).setCreativeTab(kame_random).setUnlocalizedName("ActivatedRelicOrb");
+	public final static Item ActivatedRelicOrb = new RelicItem(5096).setCreativeTab(kame_random).setUnlocalizedName("ActivatedRelicOrb").setTextureName("random:derpyniumActivated");
 	
-	public final static Item RelicFuelOrb = new RelicItem(5097).setCreativeTab(kame_random).setUnlocalizedName("RelicFuelOrb");
+	public final static Item RelicFuelOrb = new RelicItem(5097).setCreativeTab(kame_random).setUnlocalizedName("RelicFuelOrb").setTextureName("random:derpyniumFuel");
 	
-	public final static Item RelicWandCore = new RelicItem(5000).setCreativeTab(kame_random).setUnlocalizedName("RelicWandCore");
+	public final static Item RelicWandCore = new RelicItem(5000).setCreativeTab(kame_random).setUnlocalizedName("RelicWandCore").setTextureName("random:derpyniumWandCore");
        // The instance of your mod that Forge uses.
        @Instance("AncientRelics")
        public static AncientRelics instance;
@@ -86,7 +87,7 @@ public class AncientRelics {
        @EventHandler
        public void load(FMLInitializationEvent event) {
     	   proxy.registerRenderers();
-    	   
+    	   proxy.registerServerTickHandler();
     	       
     	   
     	       GameRegistry.registerItem(RelicWandCore, "RelicWandCore");
@@ -151,7 +152,7 @@ public class AncientRelics {
                ItemStack activatedRelicStack = new ItemStack(ActivatedRelicOrb);
                ItemStack goldStack = new ItemStack(Item.ingotGold, 1);
                ItemStack diamondStack = new ItemStack(Item.diamond, 1);
-               ItemStack stoneStack = new ItemStack(1, 32, 0);
+               ItemStack stoneStack = new ItemStack(Block.stone);
                ItemStack ironStack = new ItemStack(Item.ingotIron);
                ItemStack coalStack = new ItemStack(Item.coal);
                ItemStack InertRelicStack = new ItemStack(InertRelicOrb);
@@ -184,18 +185,21 @@ public class AncientRelics {
                ItemStack ironcStack = new ItemStack(Item.plateIron);
                ItemStack ironlStack = new ItemStack(Item.legsIron);
                ItemStack ironbStack = new ItemStack(Item.bootsIron);
+               ItemStack reliStack = new ItemStack(InertRelicOrb, 5);
+               
+               GameRegistry.addShapelessRecipe(reliStack, relicBlockStack);
                              
-               GameRegistry.addRecipe(wandcoreStack, "xyx", "xox", "xyx",
+               GameRegistry.addRecipe(wandcoreStack, "xyx", "yoy", "xyx",
             		   'x', goldStack, 'y', stickStack, 'o', enderpearlStack);
                
-               GameRegistry.addRecipe(relicFuelStack, " x ", "xyx", "x",
+               GameRegistry.addRecipe(relicFuelStack, " x ", "xyx", " x ",
             		   'x', coalBlockStack, 'y', activatedRelicStack);
                
                GameRegistry.addRecipe(activatedRelicStack, " y ", "yxy", " y ",
             		  'y', coalStack, 'x', InertRelicStack);
                
                GameRegistry.addRecipe(relicBlockStack, "xyx", "yxy", "yxy",
-                       'y', InertRelicOrb, 'x', hardstoneStack);
+                       'y', InertRelicStack, 'x', hardstoneStack);
                
                GameRegistry.addRecipe(hardstoneStack, "xxx", "xxx", "xxx",
             		   'x', cobbleStack);
@@ -203,7 +207,7 @@ public class AncientRelics {
                GameRegistry.addRecipe(relichovelStack, " x ", " y ",
             		   'x', activatedRelicStack, 'y', shovelStack);
                
-               GameRegistry.addRecipe(relicswordStack, " x ", " x ",
+               GameRegistry.addRecipe(relicswordStack, " x ", " y ",
             		 'x', activatedRelicStack, 'y', swordStack  );
                
                GameRegistry.addRecipe(relicaxeStack, " x ", " y ",
@@ -215,7 +219,7 @@ public class AncientRelics {
                GameRegistry.addRecipe(relichoeStack, " x ", " y ",
             		   'x', activatedRelicStack, 'y', hoeStack);
                
-               GameRegistry.addRecipe(relicwand, " x ", " y ", "   ",
+               GameRegistry.addRecipe(relicwand, " x ", " y ",
             		   'x', activatedRelicStack, 'y', wandcoreStack);
                
                GameRegistry.addRecipe(relicHatStack, " x ", " y ",
