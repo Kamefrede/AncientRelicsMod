@@ -7,6 +7,6 @@ public class RelicItem extends Item {
 	public RelicItem(int id) {
 		super(id);
 		setMaxStackSize(64);
-		
+
 	}
-}	
+}

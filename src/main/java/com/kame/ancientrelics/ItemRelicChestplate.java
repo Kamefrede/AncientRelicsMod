@@ -1,12 +1,12 @@
 package com.kame.ancientrelics;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemRelicChestplate extends ItemArmor {
 
@@ -15,13 +15,17 @@ public class ItemRelicChestplate extends ItemArmor {
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		// TODO Auto-generated constructor stub
 	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1RegisterIcon) {
-		this.itemIcon = par1RegisterIcon.registerIcon("random:derpyniumChestplate");
+		this.itemIcon = par1RegisterIcon
+				.registerIcon("random:derpyniumChestplate");
 	}
+
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot,
+			int layer) {
 		return "random:textures/models/armor/derpy_1.png";
 	}
 }

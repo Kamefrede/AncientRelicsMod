@@ -7,7 +7,7 @@ public class RelicFuelHandler implements IFuelHandler {
 
 	@Override
 	public int getBurnTime(ItemStack fuel) {
-		if(fuel.itemID == com.kame.ancientrelics.AncientRelics.RelicFuelOrb.itemID) {
+		if (fuel.itemID == com.kame.ancientrelics.AncientRelics.RelicFuelOrb.itemID) {
 			return 20000;
 		}
 		return 0;
