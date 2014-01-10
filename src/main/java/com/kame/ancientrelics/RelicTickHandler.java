@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
-public class ServerTickHandler implements ITickHandler {
+public class RelicTickHandler implements ITickHandler {
 
 	private void onPlayerTick(EntityPlayer player) {
 
